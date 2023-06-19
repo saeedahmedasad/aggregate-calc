@@ -1,0 +1,31 @@
+"use strict";
+let test = "saeed";
+const matricObt = document.querySelector("#matric-obt");
+const matricTot = document.querySelector("#matric-tot");
+const matricWei = document.querySelector("#matric-wei");
+const interObt = document.querySelector("#inter-obt");
+const interTot = document.querySelector("#inter-tot");
+const interWei = document.querySelector("#inter-wei");
+const testObt = document.querySelector("#test-obt");
+const testTot = document.querySelector("#test-tot");
+const testWei = document.querySelector("#test-wei");
+const calculateBtn = document.querySelector(".calculate");
+const result = document.querySelector(".result");
+let matricObtMarks, interObtMarks, testObtMarks;
+let matricTotMarks, interTotMarks, testTotMarks;
+let matricWeiPerc, interWeiPerc, testWeiPerc = 0;
+let aggregatePerc;
+function calculate() {
+    matricObtMarks = parseFloat(matricObt.value);
+    matricTotMarks = parseFloat(matricTot.value);
+    matricWeiPerc = parseFloat(matricWei.value);
+    interObtMarks = parseFloat(interObt.value);
+    interTotMarks = parseFloat(interTot.value);
+    interWeiPerc = parseFloat(interWei.value);
+    testObtMarks = parseFloat(testObt.value);
+    testTotMarks = parseFloat(testTot.value);
+    testWeiPerc = parseFloat(testWei.value);
+    aggregatePerc = ((matricWeiPerc / 100) * ((matricObtMarks / matricTotMarks) * 100) + (interWeiPerc / 100) * ((interObtMarks / interTotMarks) * 100) + (testWeiPerc / 100) * ((testObtMarks / testTotMarks) * 100)).toFixed(2);
+    result.textContent = aggregatePerc.toString();
+}
+calculateBtn === null || calculateBtn === void 0 ? void 0 : calculateBtn.addEventListener("click", calculate);
