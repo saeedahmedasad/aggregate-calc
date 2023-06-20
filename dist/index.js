@@ -24,7 +24,7 @@ function calculate() {
     let testObtMarks = parseFloat(testObt.value);
     let testTotMarks = parseFloat(testTot.value);
     let testWeiPerc = parseFloat(testWei.value);
-    if (matricTot.value || matricObt.value || matricWei.value || interObt.value || interTot.value || interWei.value || testObt.value || testTot.value || testWei.value != "") {
+    if (matricTot.value && matricObt.value && matricWei.value && interObt.value && interTot.value && interWei.value && testObt.value && testTot.value && testWei.value != "") {
         aggregatePerc = ((matricWeiPerc / 100) * ((matricObtMarks / matricTotMarks) * 100) + (interWeiPerc / 100) * ((interObtMarks / interTotMarks) * 100) + (testWeiPerc / 100) * ((testObtMarks / testTotMarks) * 100)).toFixed(2);
         resultDiv.style.display = "block";
         result.textContent = `Your Aggregate: ${aggregatePerc.toString()}%`;
