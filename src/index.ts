@@ -25,7 +25,7 @@ function calculate(){
     let testObtMarks: number = parseFloat(testObt.value)
     let testTotMarks: number = parseFloat(testTot.value)
     let testWeiPerc: number = parseFloat(testWei.value)
-    if(matricTot || matricObt || matricWei || interObt || interTot || interWei || testObt || testTot || testWei === ""){
+    if(matricTot.value || matricObt.value || matricWei.value || interObt.value || interTot.value || interWei.value || testObt.value || testTot.value || testWei.value === ""){
             alert("Please fill out all the fields :)")
     }else{
         aggregatePerc = ((matricWeiPerc/100) * ((matricObtMarks/matricTotMarks)* 100) + (interWeiPerc/100) * ((interObtMarks/interTotMarks)* 100) + (testWeiPerc/100) * ((testObtMarks/testTotMarks)* 100)).toFixed(2)

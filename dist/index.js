@@ -24,7 +24,7 @@ function calculate() {
     let testObtMarks = parseFloat(testObt.value);
     let testTotMarks = parseFloat(testTot.value);
     let testWeiPerc = parseFloat(testWei.value);
-    if (matricTot || matricObt || matricWei || interObt || interTot || interWei || testObt || testTot || testWei === "") {
+    if (matricTot.value || matricObt.value || matricWei.value || interObt.value || interTot.value || interWei.value || testObt.value || testTot.value || testWei.value === "") {
         alert("Please fill out all the fields :)");
     }
     else {
