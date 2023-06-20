@@ -11,21 +11,26 @@ const testTot = document.querySelector("#test-tot");
 const testWei = document.querySelector("#test-wei");
 const calculateBtn = document.querySelector(".calculate");
 const result = document.querySelector(".result");
-let matricObtMarks, interObtMarks, testObtMarks;
-let matricTotMarks, interTotMarks, testTotMarks;
-let matricWeiPerc, interWeiPerc, testWeiPerc = 0;
+const resultDiv = document.querySelector(".result-div");
+const closeBtn = document.querySelector(".close-div ");
 let aggregatePerc;
 function calculate() {
-    matricObtMarks = parseFloat(matricObt.value);
-    matricTotMarks = parseFloat(matricTot.value);
-    matricWeiPerc = parseFloat(matricWei.value);
-    interObtMarks = parseFloat(interObt.value);
-    interTotMarks = parseFloat(interTot.value);
-    interWeiPerc = parseFloat(interWei.value);
-    testObtMarks = parseFloat(testObt.value);
-    testTotMarks = parseFloat(testTot.value);
-    testWeiPerc = parseFloat(testWei.value);
+    let matricObtMarks = parseFloat(matricObt.value);
+    let matricTotMarks = parseFloat(matricTot.value);
+    let matricWeiPerc = parseFloat(matricWei.value);
+    let interObtMarks = parseFloat(interObt.value);
+    let interTotMarks = parseFloat(interTot.value);
+    let interWeiPerc = parseFloat(interWei.value);
+    let testObtMarks = parseFloat(testObt.value);
+    let testTotMarks = parseFloat(testTot.value);
+    let testWeiPerc = parseFloat(testWei.value);
     aggregatePerc = ((matricWeiPerc / 100) * ((matricObtMarks / matricTotMarks) * 100) + (interWeiPerc / 100) * ((interObtMarks / interTotMarks) * 100) + (testWeiPerc / 100) * ((testObtMarks / testTotMarks) * 100)).toFixed(2);
-    result.textContent = aggregatePerc.toString();
+    resultDiv.style.display = "block";
+    result.textContent = `Your Aggregate: ${aggregatePerc.toString()}%`;
+}
+function closeDialogBox() {
+    resultDiv.style.display = "none";
+    console.log("testing");
 }
 calculateBtn === null || calculateBtn === void 0 ? void 0 : calculateBtn.addEventListener("click", calculate);
+closeBtn.addEventListener("click", closeDialogBox);

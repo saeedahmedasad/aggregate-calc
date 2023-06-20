@@ -11,24 +11,28 @@ const testTot = document.querySelector("#test-tot") as HTMLInputElement;
 const testWei = document.querySelector("#test-wei") as HTMLInputElement;
 const calculateBtn = document.querySelector(".calculate") as HTMLButtonElement
 const result = document.querySelector(".result") as HTMLOutputElement
-
-let matricObtMarks: number, interObtMarks: number, testObtMarks: number;
-let matricTotMarks: number, interTotMarks: number, testTotMarks: number
-let matricWeiPerc: number, interWeiPerc: number, testWeiPerc: number = 0
+const resultDiv = document.querySelector(".result-div") as HTMLDialogElement
+const closeBtn = document.querySelector(".close-div ") as HTMLButtonElement
 
 let aggregatePerc: string
 function calculate(){
-    matricObtMarks = parseFloat(matricObt.value)
-    matricTotMarks = parseFloat(matricTot.value)
-    matricWeiPerc = parseFloat(matricWei.value)
-    interObtMarks = parseFloat(interObt.value)
-    interTotMarks = parseFloat(interTot.value)
-    interWeiPerc = parseFloat(interWei.value)
-    testObtMarks = parseFloat(testObt.value)
-    testTotMarks = parseFloat(testTot.value)
-    testWeiPerc = parseFloat(testWei.value)
+    let matricObtMarks: number = parseFloat(matricObt.value)
+    let matricTotMarks: number = parseFloat(matricTot.value)
+    let matricWeiPerc: number = parseFloat(matricWei.value)
+    let interObtMarks: number = parseFloat(interObt.value)
+    let interTotMarks: number = parseFloat(interTot.value)
+    let interWeiPerc: number = parseFloat(interWei.value)
+    let testObtMarks: number = parseFloat(testObt.value)
+    let testTotMarks: number = parseFloat(testTot.value)
+    let testWeiPerc: number = parseFloat(testWei.value)
 
     aggregatePerc = ((matricWeiPerc/100) * ((matricObtMarks/matricTotMarks)* 100) + (interWeiPerc/100) * ((interObtMarks/interTotMarks)* 100) + (testWeiPerc/100) * ((testObtMarks/testTotMarks)* 100)).toFixed(2)
-    result.textContent = aggregatePerc.toString()
+    resultDiv.style.display = "block"
+    result.textContent =`Your Aggregate: ${ aggregatePerc.toString()}%`
+}
+function closeDialogBox(){
+    resultDiv.style.display = "none"
+    console.log("testing");
 }
 calculateBtn?.addEventListener("click", calculate)
+closeBtn.addEventListener("click", closeDialogBox)

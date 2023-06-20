@@ -8,55 +8,44 @@
   </head>
   <body>
     <main>
-      <h1>Aggregate Calculator</h1>
+      <h1 class="heading">Aggregate Calculator</h1>
       <div class="inputs">
-        Matric
         <div class="matric-data">
-          <div class="input">
-            <label>Obtained Marks:</label>
-            <input type="number" id="matric-obt" />
-          </div>
-          <div class="input">
-            <label>Total Marks:</label>
-            <input type="number" id="matric-tot" />
-          </div>
-          <div class="input">
-            <label>Weightage%:</label>
-            <input type="number" id="matric-wei" />
-          </div>
+          <h2>Matric</h2>
+          <input type="number" id="matric-obt" placeholder="Obtained Marks" />
+
+          <input type="number" id="matric-tot" placeholder="Total Marks" />
+
+          <input type="number" id="matric-wei" placeholder="Weightage" />
         </div>
-        Intermediate
+
         <div class="inter-data">
-          <div class="input">
-            <label>Obtained Marks:</label>
-            <input type="number" id="inter-obt" />
-          </div>
-          <div class="input">
-            <label>Total Marks:</label>
-            <input type="number" id="inter-tot" />
-          </div>
-          <div class="input">
-            <label>Weightage%:</label>
-            <input type="number" id="inter-wei" />
-          </div>
+          <h2>Intermediate</h2>
+          <input type="number" id="inter-obt" placeholder="Obtained Marks" />
+
+          <input type="number" id="inter-tot" placeholder="Total Marks" />
+
+          <input type="number" id="inter-wei" placeholder="Weightage" />
         </div>
-        Entry Test
+
         <div class="test-data">
-          <div class="input">
-            <label>Obtained Marks:</label>
-            <input type="number" id="test-obt" />
-          </div>
-          <div class="input">
-            <label>Total Marks:</label>
-            <input type="number" id="test-tot" />
-          </div>
-          <div class="input">
-            <label>Weightage%:</label>
-            <input type="number" id="test-wei" />
-          </div>
+          <h2>Entry Test</h2>
+          <input type="number" id="test-obt" placeholder="Obtained Marks" />
+
+          <input type="number" id="test-tot" placeholder="Total Marks" />
+
+          <input type="number" id="test-wei" placeholder="Weightage" />
         </div>
       </div>
-      <center><h2 class="result">Output</h2></center>
+      <div class="result-div">
+        <button class="close-div">
+          <img
+            src="https://icons.veryicon.com/png/o/miscellaneous/medium-thin-linear-icon/cross-23.png"
+            alt="cross"
+          />
+        </button>
+        <div class="result"></div>
+      </div>
       <center><button class="calculate">Calculate</button></center>
     </main>
   </body>

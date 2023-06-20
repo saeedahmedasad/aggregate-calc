@@ -5,6 +5,11 @@
   box-sizing: border-box;
   font-family: "Hanken Grotesk", sans-serif;
 }
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
 body {
   background: rgb(19, 30, 65);
   min-height: 100vh;
@@ -15,54 +20,32 @@ body {
   color: white;
 }
 main {
-  padding: 50px;
+  padding: 10px;
   background: rgb(19, 30, 55);
   border-radius: 10px;
 }
-h1 {
+.heading {
   margin-bottom: 30px;
+  text-align: center;
 }
-.inputs {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  flex-wrap: wrap;
-  gap: 30px;
+input {
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  outline: none;
+  background: transparent;
+  padding: 5px;
+  border-radius: 5px;
+  color: white;
+  letter-spacing: 2px;
 }
 .matric-data,
 .inter-data,
 .test-data {
   display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 10px;
-}
-.input {
-  display: flex;
   flex-direction: column;
-  align-items: flex-start;
-  flex-wrap: wrap;
-  gap: 8px;
-  background: rgb(19, 30, 45);
-  padding: 10px;
-  border-radius: 8px;
+  gap: 10px;
+  margin: 10px;
 }
-.input input {
-  border: 2px solid rgba(255, 255, 255, 0.3);
-  outline: none;
-  background: transparent;
-  padding: 5px;
-  border-radius: 8px;
-  color: white;
-  letter-spacing: 2px;
-}
-input[type="number"]::-webkit-inner-spin-button,
-input[type="number"]::-webkit-outer-spin-button {
-  -webkit-appearance: none;
-  margin: 0;
-}
+
 .calculate {
   padding: 10px 20px;
   margin-top: 30px;
@@ -70,11 +53,34 @@ input[type="number"]::-webkit-outer-spin-button {
   border: none;
   outline: none;
   color: white;
-  font-size: 30px;
+  font-size: 18px;
   border-radius: 8px;
   cursor: pointer;
   transition: 0.3s;
 }
 .calculate:hover {
   background: rgb(19, 30, 45);
+}
+.result-div {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  translate: -50% -50%;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  background: blue;
+  border-radius: 8px;
+  font-size: 30px;
+  display: none;
+}
+.result-div img {
+  width: 30px;
+}
+.close-div {
+  position: absolute;
+  right: 0;
+  top: 0;
+  cursor: pointer;
 }
