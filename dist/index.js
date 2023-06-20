@@ -24,13 +24,17 @@ function calculate() {
     let testObtMarks = parseFloat(testObt.value);
     let testTotMarks = parseFloat(testTot.value);
     let testWeiPerc = parseFloat(testWei.value);
-    aggregatePerc = ((matricWeiPerc / 100) * ((matricObtMarks / matricTotMarks) * 100) + (interWeiPerc / 100) * ((interObtMarks / interTotMarks) * 100) + (testWeiPerc / 100) * ((testObtMarks / testTotMarks) * 100)).toFixed(2);
-    resultDiv.style.display = "block";
-    result.textContent = `Your Aggregate: ${aggregatePerc.toString()}%`;
+    if (matricTot || matricObt || matricWei || interObt || interTot || interWei || testObt || testTot || testWei === "") {
+        alert("Please fill out all the fields :)");
+    }
+    else {
+        aggregatePerc = ((matricWeiPerc / 100) * ((matricObtMarks / matricTotMarks) * 100) + (interWeiPerc / 100) * ((interObtMarks / interTotMarks) * 100) + (testWeiPerc / 100) * ((testObtMarks / testTotMarks) * 100)).toFixed(2);
+        resultDiv.style.display = "block";
+        result.textContent = `Your Aggregate: ${aggregatePerc.toString()}%`;
+    }
 }
 function closeDialogBox() {
     resultDiv.style.display = "none";
-    console.log("testing");
 }
 calculateBtn === null || calculateBtn === void 0 ? void 0 : calculateBtn.addEventListener("click", calculate);
 closeBtn.addEventListener("click", closeDialogBox);
