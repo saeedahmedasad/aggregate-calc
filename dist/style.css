@@ -70,10 +70,11 @@ input {
   justify-content: center;
   align-items: center;
   padding: 10px;
-  background: blue;
+  background: rgb(0, 0, 66);
   border-radius: 8px;
   font-size: 30px;
   display: none;
+  padding-right: 40px;
 }
 .result-div img {
   width: 30px;
